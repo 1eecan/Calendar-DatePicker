@@ -1,0 +1,139 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+:root {
+  --calender-width: 400px;
+}
+body {
+  font-family: "Open Sans";
+  font-weight: 300;
+  background-color: #d6e1e5;
+}
+.title {
+  color: #db5b33;
+  font-weight: 300;
+}
+.date-picker {
+  width: calc(var(--calender-width) / 2.5);
+  height: calc(var(--calender-width) / 10);
+  border: 1px solid gray;
+  border-radius: 3px;
+  background-color: #ffffff;
+  user-select: none;
+  cursor: pointer;
+  color: gray;
+  font-size: calc(var(--calender-width) / 20);
+}
+
+.calender {
+  width: calc(var(--calender-width));
+  height: calc(var(--calender-width) * 1.2);
+}
+.calender-nav {
+  width: calc(var(--calender-width));
+  height: calc(var(--calender-width) * 0.2);
+  border: 1px solid transparent;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #db5b33;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.calender-grid {
+  width: calc(var(--calender-width));
+  height: calc(var(--calender-width) * 0.9);
+  border: 1px solid transparent;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #ffffff;
+  font-size: calc(var(--calender-width) / 20);
+}
+.week6 {
+  height: calc(var(--calender-width) * 1.05);
+}
+.right {
+  all: unset;
+  width: 0;
+  height: 0;
+  border-top: 10px solid #db5b33;
+  border-bottom: 10px solid #db5b33;
+  border-left: 10px solid #ffffff;
+  border-right: 10px solid #db5b33;
+  cursor: pointer;
+}
+.left {
+  all: unset;
+  width: 0;
+  height: 0;
+  border-top: 10px solid #db5b33;
+  border-bottom: 10px solid #db5b33;
+  border-left: 10px solid #db5b33;
+  border-right: 10px solid #ffffff;
+  cursor: pointer;
+}
+.year-month {
+  text-align: center;
+  color: #ffffff;
+}
+.year {
+  font-size: calc(var(--calender-width) / 25);
+}
+.month {
+  font-size: calc(var(--calender-width) / 20);
+}
+.date {
+  position: relative;
+  top: calc(var(--calender-width) / 15);
+  font-size: calc(var(--calender-width) / 25);
+  display: grid;
+  grid-template-columns: repeat(7, calc(var(--calender-width) / 8));
+  grid-template-rows: calc(var(--calender-width) / 12) repeat(
+      6,
+      calc(var(--calender-width) / 8)
+    );
+  align-content: space-around;
+  justify-content: space-evenly;
+  text-align: center;
+  gap: calc(var(--calender-width) / 60);
+  padding: 0px calc(var(--calender-width) / 30);
+  min-width: 200px;
+}
+.day {
+  color: gray;
+}
+.this_month:nth-child(7n + 1) {
+  color: red;
+}
+.prev_month,
+.next_month {
+  color: gray;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.item:hover {
+  background-color: #db5b33;
+  transition: ease-in 0.1s;
+  color: #ffffff;
+}
+.today {
+  border: 1px solid #db5b33;
+  border-radius: 50%;
+}
+
+.fullcircle {
+  border-radius: 50%;
+  background-color: #db5b33;
+  color: #ffffff;
+}
+.this_month:nth-child(7n + 1).fullcircle {
+  color: #ffffff;
+}
